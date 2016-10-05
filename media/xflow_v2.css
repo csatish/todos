@@ -1,0 +1,220 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    transition: 0.50s all ease;
+    overflow: hidden;
+}
+
+/*Horizonatally center all items*/
+.content-x-center {
+  display: -webkit-flex;          /*Safari*/
+  -webkit-justify-content: center;/*Safari 6.1+ flex-start|flex-end|center|space-between|space-around|initial|inherit*/
+  display: flex;
+  justify-content: center;        /*flex-start|flex-end|center|space-between|space-around|initial|inherit*/
+}
+
+
+/*Vertically all items in center with float left on items*/
+.alignItems-y-center {
+  display: -webkit-flex;       /*Safari*/
+  display: flex;
+
+ -webkit-align-items: center;
+ align-items: center;    /*stretch|center|flex-start|flex-end|baseline|initial|inherit*/
+}
+
+/*Do not works with when horizontal space available for multi items and all will work like float left */
+/*Multiplae items need to be in center with conainer with less than 2 items width*/
+.content-y-center {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+   -webkit-align-content: center;
+   align-content: center;
+}
+
+/* x-y center with float left on items */
+.alignItems-xy-center {
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+
+#rootContainer {
+  width:100%;
+  height:100%;
+}
+
+
+#sideMenuContainer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#FFF; /*#e5e5e5*/
+    overflow-x: hidden;
+    transition: 0.5s;
+    display:block;
+    box-shadow: 2px 0px 2px #888888;;
+}
+
+#sideMenuDisplayButton {
+   display: none;
+}
+
+#pageContainer {
+  width: calc(100% - 106px);
+  height: 100%;
+  float: right;
+}
+
+#barMenu_container {
+  width : 106px;
+  height: 100%;
+  float: left;
+  background-color: #434343;
+}
+
+@media(max-width:768px){
+   #sideMenuContainer {
+      display:block;
+   }
+
+   #sideMenuDisplayButton {
+      display:block;
+   }
+
+   #barMenu_container {
+      display: none;
+   }
+
+   #pageContainer {
+      width: 100%;
+   }
+}
+
+@media(min-width:769px){
+   #barMenu_container {
+      display: block;
+   }
+
+   #pageContainer {
+      width: calc(100% -106px);
+   }
+}
+
+.sideMenuItem {
+   border-bottom: 1px solid lightgrey;
+   height : 40px;
+}
+
+
+#barMenu_container .barMenuInner {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#barMenu_container .barMenu {
+  width: 106px;
+  height: 98px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #535151;
+}
+
+.barMenuContent {
+  width: 100%;
+  height: 100%; /*calc(100% - 8px);*/
+  background-color: #2F2f2f;
+  color: #FFF;
+}
+
+.circleBase {
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    background-color: inherit;
+    border: 2px solid white;
+    overflow: hidden;
+
+    /*circleFill height start from bottom using below css*/
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+
+.circleValue {
+   /*circleBase width and height - borderwidth*2*/
+     width: 30px;
+     height: 30px;
+   /* for chrome below is enough
+     position: absolute;
+   */
+   position: absolute;
+   left: 21px;
+   /*
+     position: fixed;
+     left: 21px;*/
+}
+
+.circleFill {
+  width: 100%;
+  height: 50%;
+  background-color: #1FBF22;
+}
+
+.barMenuImg {
+  width: 34px;
+  height: 34px;
+}
+
+.fontActiveMenu{
+   color: #26af5f;
+}
+
+.fontInactiveMenu {
+   color: #e5e5e5;
+}
+
+#processSelection {
+   width: 100%;
+   height: 42px;
+}
+
+#experienceStats {
+   width: 100%;
+   height: 67px;
+   border-top: 1px solid lightgrey;
+   border-bottom: 1px solid lightgrey;
+}
+
+#detailContainer {
+   width : 100%;
+   height : calc(100% - 109px); /*- (experienceStats+ processSelection)  */
+}
+
+#processEvents {
+   width : 100%;
+   height: 86px;
+   background: #DDD;
+}
+
+#mainContainer {
+   width: 100%;
+   height: calc(100% - 86px); /*- processEvents height*/
+   background: #f2f3f7;
+}
