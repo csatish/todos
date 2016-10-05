@@ -28,9 +28,11 @@ export default class RootContainer extends Component {
 
       var menuOptions = [
        {
+          title:"Bot",
           key:"bot_menu",
           imageActive:"/media/xflow/3.0_UI/bot-msg-active.png",
           imageInactive:"/media/xflow/3.0_UI/bot-msg.png",
+          imageInactiveSS:"/media/xflow/3.0_UI/bot-msg.png",
           type:IMAGE_MENU_ITEM,
           status:MENU_ITEM_SELECTED,
 
@@ -40,6 +42,7 @@ export default class RootContainer extends Component {
           key:"priority",
           imageActive:"/media/xflow/3.0_UI/priority-active.png",
           imageInactive:"/media/xflow/3.0_UI/priority.png",
+          imageInactiveSS:"/media/xflow/3.0_UI/priority-res.png",
           messageCount: 0,
           type:REGULAR_MENU_ITEM,
           status:MENU_ITEM_DESELECTED
@@ -49,6 +52,7 @@ export default class RootContainer extends Component {
           key:"flows",
           imageActive:"/media/xflow/3.0_UI/flows-active.png",
           imageInactive:"/media/xflow/3.0_UI/flows.png",
+          imageInactiveSS:"/media/xflow/3.0_UI/flows-res.png",
           messageCount: 0,
           type:REGULAR_MENU_ITEM,
           status:MENU_ITEM_DESELECTED
@@ -58,6 +62,7 @@ export default class RootContainer extends Component {
           key:"ranking",
           imageActive:"/media/xflow/3.0_UI/performance-active.png",
           imageInactive:"/media/xflow/3.0_UI/performance.png",
+          imageInactiveSS:"/media/xflow/3.0_UI/performance-res.png",
           messageCount: 0,
           type:REGULAR_MENU_ITEM,
           status:MENU_ITEM_DESELECTED
@@ -81,7 +86,6 @@ export default class RootContainer extends Component {
    }
 
    handleMenuChange(selectedMenu) {
-      console.log(">>");
       var menuOptions = this.state.menuOptions;
       for (var i in menuOptions) {
          var menuOption = menuOptions[i];

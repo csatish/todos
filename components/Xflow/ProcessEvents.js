@@ -13,7 +13,7 @@ export class ProcessEvents extends Component {
 
    render(){
       return (
-         <div id="processEvents" style={this.props.style}>
+         <div id="processEvents" style={this.props.style} ref="processEvents">
             this is ProcessEventsContainer
          </div>
       );

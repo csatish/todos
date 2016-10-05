@@ -9,32 +9,20 @@ export class DetailContainer extends Component {
       this.state = {
 
       }
-      // this._bind('showMenu')
+      this._bind('handleResize')
    }
 
-   handleMainRect() {
-      if(this.props.isProcessEventShowing) {
-
-      }
-      else {
-
-      }
+   componentDidMount(){
+      var self = this;
+      $(window).resize(function() {
+         self.handleResize();
+      });
+   }
+   componentWinUnmount(){
+      $(window).off("resize");
    }
 
-
-   render(){
-
-      // #mainContainer {
-      //    width: calc(100% - 70px);
-      //    height : 100%;
-      //    float: right;
-      // }
-      //
-      // #processEvents {
-      //    width: 70px;
-      //    height: 100%;
-      //    float: left;
-      // }
+   getResizeStyles() {
       var mainStyle = {};
       var processEventStyle = {};
       if(this.props.isProcessEventShowing) {
@@ -51,16 +39,30 @@ export class DetailContainer extends Component {
       else {
          mainStyle = {height:"100%", float:"none", width:"100%"};
       }
+      return {mainStyle, processEventStyle}
+   }
+
+   handleResize() {
+      var styles = this.getResizeStyles();
+      $(this.refs.mainContainer).css(styles.mainStyle);
+      if(this.childRef && this.childRef.refs.processEvents) {
+         $(this.childRef.refs.processEvents).css(styles.processEventStyle);
+      }
+   }
+
+
+   render(){
+      var styles = this.getResizeStyles();
 
       return (
          <div id="detailContainer">
             {
                this.props.isProcessEventShowing ? (
-                  <ProcessEvents style={processEventStyle}/>
+                  <ProcessEvents style={styles.processEventStyle} ref={(ref) => this.childRef=ref}/>
                ) : null
             }
 
-            <div id="mainContainer" style={mainStyle}>
+            <div id="mainContainer" ref="mainContainer" style={styles.mainStyle}>
                This is detailContainer
             </div>
          </div>

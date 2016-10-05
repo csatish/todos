@@ -8,6 +8,7 @@ html, body {
 body {
     transition: 0.50s all ease;
     overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /*Horizonatally center all items*/
@@ -51,6 +52,51 @@ body {
   -webkit-align-items: center;
 }
 
+.inheritedW {
+   width: 100%;
+}
+
+.inheritedH {
+   height: inherit;
+}
+
+.inheritedWH{
+   width: inherit;
+   height: inherit;
+}
+
+.marginRight10 {
+   margin-right: 10px;
+}
+
+.marginLeft10 {
+   margin-left: 10px;
+}
+
+.marginTop10 {
+   margin-top: 10px;
+}
+
+.marginBottom10 {
+   margin-bottom: 10px;
+}
+
+.marginRight5 {
+   margin-right: 5px;
+}
+
+.marginLeft5 {
+   margin-left: 5px;
+}
+
+.marginTop5 {
+   margin-top: 5px;
+}
+
+.marginBottom5 {
+   margin-bottom: 5x;
+}
+
 
 #rootContainer {
   width:100%;
@@ -66,6 +112,7 @@ body {
     top: 0;
     left: 0;
     background-color:#FFF; /*#e5e5e5*/
+    color: #4d4D4D;
     overflow-x: hidden;
     transition: 0.5s;
     display:block;
@@ -74,6 +121,10 @@ body {
 
 #sideMenuDisplayButton {
    display: none;
+   width: 35px;
+   height: 35px;
+   margin-left: 10px;
+   margin-right: 10px;
 }
 
 #pageContainer {
@@ -216,5 +267,5 @@ body {
 #mainContainer {
    width: 100%;
    height: calc(100% - 86px); /*- processEvents height*/
-   background: #f2f3f7;
+   background: #F2F3F7;
 }

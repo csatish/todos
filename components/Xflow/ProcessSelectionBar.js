@@ -19,11 +19,13 @@ export class ProcessSelectionBar extends Component {
    render(){
 
       return (
-         <div id="processSelection">
-            <button id="sideMenuDisplayButton" className="btn btn-default" onClick={this.showMenu}>
-               xflowIcon
-            </button>
-            this is top container
+         <div id="processSelection" className="alignItems-y-center">
+            <div id="sideMenuDisplayButton">
+               <img className="inheritedWH" src="/media/xflow/3.0_UI/logo-blk-rs.png" onClick={this.showMenu} />
+            </div>
+            <div>
+               this is top container
+            </div>
          </div>
       );
    }
