@@ -112,11 +112,11 @@ body {
     top: 0;
     left: 0;
     background-color:#FFF; /*#e5e5e5*/
-    color: #4d4D4D;
+    color: #4D4D4D;
     overflow-x: hidden;
     transition: 0.5s;
     display:block;
-    box-shadow: 2px 0px 2px #888888;;
+    box-shadow: 2px 0px 2px #888888;
 }
 
 #sideMenuDisplayButton {
@@ -140,7 +140,7 @@ body {
   background-color: #434343;
 }
 
-@media(max-width:768px){
+@media (max-width:768px){
    #sideMenuContainer {
       display:block;
    }
@@ -158,13 +158,9 @@ body {
    }
 }
 
-@media(min-width:769px){
+@media (min-width:769px){
    #barMenu_container {
       display: block;
-   }
-
-   #pageContainer {
-      width: calc(100% -106px);
    }
 }
 
